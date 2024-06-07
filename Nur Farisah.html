@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        @font-face {
+            font-family: 'MyFont';
+            src: url('Font/LemonMilkMedium-mLZYV.otf');
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .page {
+            height: 100vh;
+            width: 100%;
+            display: none;
+        }
+        .page1 {
+            background: linear-gradient(270deg,#ffe4d2, #fff5d4, #e5ffe1, #d8eeff, #ffd2d2);
+            background-size: 400% 400%;
+            animation: gradient 20s ease infinite;
+            color: #bc85a3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .page1 img {
+            border-radius: 40%;
+            margin-right: 60px;
+        }
+        .page1 .title {
+            font-family: 'MyFont';
+            font-size: 50px;
+            font-weight: bold;
+        }
+        .page1 .start-button {
+            background-color: #ffffff;
+            color: #bc85a3;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .page2 {
+            background-color: #d3eee8;
+            text-align: center;
+            padding: 20px;
+        }
+        .page2 .title {
+            font-family: 'MyFont';
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #cfcbc4;
+        }
+        .page2 img {
+            border-radius: 70%;
+            width: 80px;
+            height: 80px;
+        }
+        .highlight {
+            font-family: 'MyFont';
+            font-style: italic;
+            color: #cfcbc4;
+            background-color: #d3eee8;
+        }
+        .page3 {
+            background-color: #d3eee8;
+            color: #cfcbc4;
+            text-align: center;
+            padding: 20px;
+        }
+        .page3 .title {
+            font-family: 'MyFont';
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #cfcbc4;
+        }
+        .page3 .video-container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap-reverse;
+        }
+        .page4 {
+            background-color: #d3eee8;
+            text-align: center;
+            padding: 20px;
+        }
+        .page4 .title {
+            font-family: 'MyFont';
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: #cfcbc4;
+        }
+        .page4 table {
+            width: 40%;
+            margin: 0 auto;
+            border-collapse: separate;
+        }
+        .page4 th, .page4 td {
+            border: 1px solid #8b8989;
+            padding: 10px;
+        }
+        .page5 {
+            background-color: #d3eee8;
+            text-align: center;
+            padding: 20px;
+        }
+        .page5 .title {
+            font-family: 'MyFont';
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #cfcbc4;
+        }
+        .container {
+            background-color: #EED3D9;
+            padding: 20px;
+            margin: 30px;
+            width: 90%;
+            border-radius: 10px;
+        }
+        .bordered {
+            border-radius: 25px;
+            background-color: #EED3D9;
+            padding: 20px;
+            margin: 50px;
+        }
+        .button {
+            background-color:  #EED3D9;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .icon {
+            width: 24px;
+            height: 24px;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .page6 {
+            position: relative;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        .page6 video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+        .page6 .content {
+            position: relative;
+            z-index: 1;
+        }
+        .page6 .title {
+            font-family: 'MyFont';
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #cfcbc4;
+        }
+        .image-container {
+            position: relative;
+        }
+        .image-container img {
+            width: 20%;
+            border-radius: 15px;
+        }
+        .nav-button {
+            background-color: #EED3D9;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .prev-button {
+            left: 500px;
+        }
+        .next-button {
+            right: 530px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page page1" style="display: flex;">
+        <img src="Pictures/myself.jpg" alt="myself" width="400">
+        <div>
+            <div class="title">Welcome to My Webpage</div>
+            <button class="start-button" onclick="goToPage(2)">Let's Get Started</button>
+        </div>
+    </div>
+    <div class="page page2">
+        <div class="title">Introduction</div>
+        <div class="container">
+            <div class="highlight">Acknowledgement</div>
+            <p>Firstly, all praises are for the Almighty 
+               Allah who gave me the ability to complete 
+               this task. I created this site as a part of 
+               course that I am taking which is, Introduction 
+               to Web Development and Library Portal (IML470).
+               I am using this opportunity to express my deepest 
+               gratitude to my lecturer, Sir 
+               Ahmad Soffean bin Othman. Without his guidance, 
+               I would not be able to complete this task. Finally, 
+               I would like to express my deepest thank you to
+               my friends for their support to finish 
+               the assignment.</p>
+            <div class="highlight">About Me</div>
+            <p>Hola! My name is Nur Farisah binti Jafrin. My matrics number is 2023299836. I was born on 19th February. 
+               I am from Melaka. This is my first time creating a webpage. I would like to share things that I 
+               like with people such as short vlogs that I have taken, my favorite songs and some pictures of food from my gallery. 
+               Please find my attach contacts below for any inquires.
+            </p>
+            <div class="highlight">Contact Me</div>
+            <a href="https://www.facebook.com/profile.php?id=100074855915252&mibextid=LQQJ4d"><img class="icon" src="Pictures/facebook.png" alt="facebook"></a>
+            <a href="mailto:2023299836@student.edu.my"><img class="icon" src="Pictures/email.jpg" alt="email"></a>
+        </div>
+        <audio controls autoplay>
+            <source src="Music/Powfu - death bed (Lyrics) feat. beabadoobee.mp3" type="audio/mpeg">
+        </audio>
+        <div class="copyright">© NUR FARISAH, MADE FOR IML470 ASSIGNMENT (2024) </div>
+        <button class="button" onclick="goToPage(1)">Previous Page</button>
+        <button class="button" onclick="goToPage(3)">Next Page</button>
+    </div>
+    <div class="page page3">
+        <div class="title">My Videos</div>
+        <div class="video-container">
+            <div class="video">
+                <video width="300" height="500" controls>
+                    <source src="Videos/video 1.mp4" type="video/mp4">
+                </video>
+                <p>Visiting Ipoh with my friend.</p>
+            </div>
+            <div class="video">
+                <video width="300" height="500" controls>
+                    <source src="Videos/video 2.mp4" type="video/mp4">
+                </video>
+                <p>Cafe hopping at Johor.</p>
+            </div>
+            <div class="video">
+                <video width="300" height="500" controls>
+                    <source src="Videos/video 3.mp4" type="video/mp4">
+                </video>
+                <p>Trying out a cafe at Seri Kembangan.</p>
+            </div>
+            <div class="video">
+                <video width="300" height="500" controls>
+                    <source src="Videos/video 4.mp4" type="video/mp4">
+                </video>
+                <p>Playing tourist at Kuala Lumpur.</p> 
+            </div>
+        </div>
+        <div class="copyright">© 2024 NUR FARISAH, MADE FOR IML470 ASSIGNMENT (2024)</div>
+        <button class="button" onclick="goToPage(2)">Previous Page</button>
+        <button class="button" onclick="goToPage(4)">Next Page</button>
+    </div>
+    <div class="page page4">
+        <div class="title">My Favourite Songs</div>
+        <table>
+            <tr>
+                <th>Album Cover</th>
+                <th>Song Title</th>
+                <th>Link</th>
+            </tr>
+            <tr>
+                <td><img src="Pictures/album 1.jpg" alt="album 1" width="80"></td>
+                <td>Daniel Caesar and Mustafa - Toronto 2014</td>
+                <td><a href="https://youtu.be/-YlFWMXxgtg?si=BafFN0xEempZu2Wd" target="_blank">Listen</a></td>
+            </tr>
+            <tr>
+                <td><img src="Pictures/album 2.jpg" alt="album 2" width="80"></td>
+                <td>Fourtwnty - Zona Nyaman OST. Filosofi Kopi 2: Ben & Jody</td>
+                <td><a href="https://youtu.be/OnfYLBNvrPw?si=IZHiJVCtOfyZxEde" target="_blank">Listen</a></td>
+            </tr>
+            <tr>
+                <td><img src="Pictures/album 3.jpg" alt="album 3" width="80"></td>
+                <td>My Chemical Romance - I don't Love You</td>
+                <td><a href="https://youtu.be/pqfZYvsTkkk?si=Gxo1PnUjRWnsxsRf" target="_blank">Listen</a></td>
+            </tr>
+            <tr>
+                <td><img src="Pictures/album 4.jpg" alt="album 4" width="80"></td>
+                <td>10CM - Spring Snow</td>
+                <td><a href="https://youtu.be/1NKUVrKgzmk?si=8d2vhVR87mSFDEpz" target="_blank">Listen</a></td>
+            </tr>
+        </table>
+        <div class="copyright">© NUR FARISAH, MADE FOR IML470 ASSIGNMENT (2024) </div>
+        <button class="button" onclick="goToPage(3)">Previous Page</button>
+        <button class="button" onclick="goToPage(5)">Next Page</button>
+    </div>
+    <div class="page page5">
+        <div class="title">Life as a Student</div>
+        <div class="container">
+            <h2>Pros</h2>
+            <p>Aside from the obvious advantages of academic success, being a student is a life-changing experience. 
+                The college experience offers lots of chances for individuals to develop into competent, well-rounded adults, 
+                from professional preparation to personal growth. 
+                The following are some of the main benefits of enrolling in university::</p>
+            <ul>
+                <li>Access to internships, co-op programs, and placement opportunities provides 
+                    real-world experience</li>
+                <li>Universities offer access to libraries, research labs, and other academic resources.</li>
+                <li>Networking with peers and professionals</li>
+            </ul>
+        </div>
+        <div class="container">
+            <h2>Cons</h2>
+            <p>Being a student has many advantages, but it also has a unique mix of difficulties and disadvantages. 
+            It's crucial to comprehend these drawbacks in order to have a fair assessment of college life. 
+            The following are a few of the main drawbacks of attending school:</p>
+            <ul>
+                <li>Heavy workload and stress</li>
+                <li>Financial constraints and student loans</li>
+                <li>Balancing study with personal life</li>
+                <li>Pressure to perform and succeed</li>
+            </ul>
+        </div>
+        <div class="copyright">© NUR FARISAH, MADE FOR IML470 ASSIGNMENT (2024) </div>
+        <button class="button" onclick="goToPage(4)">Previous Page</button>
+        <button class="button" onclick="goToPage(6)">Next Page</button>
+    </div>
+    <div class="page page6">
+        <video autoplay muted loop>
+            <source src="Videos/background 1.mp4" type="video/mp4">
+        </video>
+        <div class="content">
+            <div class="title">Food Hunting</div>
+            <div class="image-container">
+                <button class="nav-button prev-button" onclick="prevImage()">Previous</button>
+                <img id="foodImage" src="Food Pictures/Picture 1.jpg" alt="Food Image">
+                <button class="nav-button next-button" onclick="nextImage()">Next</button>
+            </div>
+        </div>
+        <div class="copyright">© NUR FARISAH, MADE FOR IML470 ASSIGNMENT (2024) </div>
+        <button class="button" onclick="goToPage(5)">Previous Page</button>
+    </div>
+    <script>
+        function goToPage(pageNumber) {
+            document.querySelectorAll('.page').forEach(page => page.style.display = 'none');
+            document.querySelector('.page' + pageNumber).style.display = 'block';
+        }
+
+        const images = ['Food Pictures/Picture 1.jpg', 'Food Pictures/Picture 2.jpg', 'Food Pictures/Picture 3.jpg', 'Food Pictures/Picture 4.jpg', 'Food Pictures/Picture 5.jpg'];
+        let currentImageIndex = 0;
+
+        function showImage(index) {
+            document.getElementById('foodImage').src = images[index];
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex > 0) ? currentImageIndex - 1 : images.length - 1;
+            showImage(currentImageIndex);
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex < images.length - 1) ? currentImageIndex + 1 : 0;
+            showImage(currentImageIndex);
+        }
+
+        // Initialize with the first image
+        showImage(currentImageIndex);
+    </script>
+</body>
+</html>
